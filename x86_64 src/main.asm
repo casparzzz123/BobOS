@@ -6,6 +6,8 @@ BITS 16
 start:
     mov si, message
     call print
+    mov si, helpmessage
+    call print
     jmp $
 
 print:
@@ -24,6 +26,7 @@ print_char:
     ret
 
 message: db "Ninja Duck OS", 0
+helpmessage: db "Use command help for list of all the commands" 0
 
 times 510-($ -$$) db 0
 dw 0xAA55
